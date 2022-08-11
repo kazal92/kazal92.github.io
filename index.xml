@@ -1,0 +1,1594 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Jun_IT</title>
+        <link>https://kazal92.github.io/</link>
+        <description>Recent content on Jun_IT</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>ko</language>
+        <lastBuildDate>Mon, 04 Apr 2022 07:59:37 +0900</lastBuildDate><atom:link href="https://kazal92.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>ARP</title>
+        <link>https://kazal92.github.io/arp/</link>
+        <pubDate>Mon, 04 Apr 2022 07:59:37 +0900</pubDate>
+        
+        <guid>https://kazal92.github.io/arp/</guid>
+        <description>&lt;ol&gt;
+&lt;li&gt;누구냐고 물을 IP를 요청하는 브로드캐스트 MAC에 대한 ARP 요청 생성&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;ARP를 사용하여 누가 대상 IP를 가지고 있는지 확인&lt;/li&gt;
+&lt;li&gt;목적지 MAC을 브로드캐스트 MAC으로 설정&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;ㄱㅋ&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;broadcast = scapy.Ether(dst=&amp;ldquo;ff:ff:ff:ff:ff:ff&amp;rdquo;)
+broadcast.show()  # 확인&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>ADB 사용법</title>
+        <link>https://kazal92.github.io/android/adb-%EC%82%AC%EC%9A%A9%EB%B2%95/</link>
+        <pubDate>Fri, 01 Apr 2022 08:43:09 +0900</pubDate>
+        
+        <guid>https://kazal92.github.io/android/adb-%EC%82%AC%EC%9A%A9%EB%B2%95/</guid>
+        <description>&lt;h2 id=&#34;1-adb&#34;&gt;1. ADB&lt;/h2&gt;
+&lt;p&gt;ADB 사용하기&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://forum.xda-developers.com/t/tool-minimal-adb-and-fastboot-2-9-18.2317790/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://forum.xda-developers.com/t/tool-minimal-adb-and-fastboot-2-9-18.2317790/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;adb shell&lt;br&gt;
+adb devices
+&lt;br&gt;&lt;/br&gt;
+옵션&lt;br&gt;
+-e : 에뮬레이터&lt;br&gt;
+-d : USB 장치&lt;br&gt;
+-s : adb -s &amp;lt;장치명&amp;gt; &amp;lt;명령어&amp;gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;설치치된 패키지 찾기&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;adb shell pm list packages | find &amp;#34;&amp;lt;패키지 이름이나 키워드&amp;gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;apk의 정확한 패키지 이름 확인 후, apk 설치 위치를 확인합니다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;adb&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;shell&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;dumpsys&lt;/span&gt; &lt;span style=&#34;color:#5bc4bf&#34;&gt;package&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#06b6ef&#34;&gt;패키지&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;이름&lt;/span&gt;&amp;gt; | &lt;span style=&#34;color:#06b6ef&#34;&gt;find&lt;/span&gt; &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;path&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;adb-기본-명령어&#34;&gt;&lt;strong&gt;adb 기본 명령어(?)&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;adb&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;devices&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;adb&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;connect&lt;/span&gt; &lt;span style=&#34;color:#f99b15&#34;&gt;127.0.0.1&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;62001&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;adb&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;shell&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;로그-분석&#34;&gt;&lt;strong&gt;로그 분석&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb logcat  : &lt;span style=&#34;color:#ef6155&#34;&gt;안드로이드&lt;/span&gt; &lt;span style=&#34;color:#ef6155&#34;&gt;장치에서&lt;/span&gt; &lt;span style=&#34;color:#ef6155&#34;&gt;발생하는&lt;/span&gt; &lt;span style=&#34;color:#ef6155&#34;&gt;로그메시지&lt;/span&gt; &lt;span style=&#34;color:#ef6155&#34;&gt;출력&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb logcat &lt;span style=&#34;color:#5bc4bf&#34;&gt;--&lt;/span&gt;pid&lt;span style=&#34;color:#5bc4bf&#34;&gt;=&amp;lt;&lt;/span&gt;pid&lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#5bc4bf&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ef6155&#34;&gt;특정&lt;/span&gt; &lt;span style=&#34;color:#ef6155&#34;&gt;프로세스&lt;/span&gt; &lt;span style=&#34;color:#ef6155&#34;&gt;로그만&lt;/span&gt; &lt;span style=&#34;color:#ef6155&#34;&gt;출력&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;프로세스-목록-확인&#34;&gt;&lt;strong&gt;프로세스 목록 확인&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb jdwp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;// 해당 어플 실행전 adb jdwp 결과값과 실행후 결과값을 비교하여 추가된 PID로 분석
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;어플리케이션-제어&#34;&gt;&lt;strong&gt;어플리케이션 제어&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;**// 어플리케이션 설치**
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb install &amp;lt;apk_파일&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;**// 동일한 어플리케이션 설치되어있을경우 기존데이터 삭제 없이 설치**
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb -r install &amp;lt;apk_파일&amp;gt; | grep &amp;lt;설치된 어플리케이션&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;**//설치된 어플리케이션 패키지 목록**
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb shell pm list packages &lt;span style=&#34;color:#5bc4bf&#34;&gt;-f&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;**// 어플리케이션 삭제**
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb uninstall &amp;lt;설치된패키지명&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;파일제어&#34;&gt;&lt;strong&gt;파일제어&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;**// 에뮬레이터/장치 &lt;span style=&#34;color:#ef6155&#34;&gt;→&lt;/span&gt; PC로 파일 복사**
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb pull &amp;lt;장치 경로&amp;gt; &amp;lt;pc저장 위치&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;**// PC -&amp;gt; 에뮬레이터/장치로 파일 복사**
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb push &amp;lt;pc파일위치&amp;gt; &amp;lt;장치저장 위치&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;포트와-네트워킹&#34;&gt;&lt;strong&gt;포트와 네트워킹&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;**// 로컬 포트를 안드로이드 장치의 특정 포트와 소켓 통신**
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb forward &amp;lt;로컬&amp;gt; &amp;lt;원격지&amp;gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb forwoard tcp&lt;span style=&#34;color:#ef6155&#34;&gt;:&lt;/span&gt;7777 tcp&lt;span style=&#34;color:#ef6155&#34;&gt;:&lt;/span&gt;8888
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;**// 디버깅**
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb forwoard tcp&lt;span style=&#34;color:#ef6155&#34;&gt;:&lt;/span&gt;7777 jdwp&lt;span style=&#34;color:#ef6155&#34;&gt;:&lt;/span&gt;1824
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jdb -sourcepath &amp;lt;경로&amp;gt; -connect 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;스크립팅&#34;&gt;&lt;strong&gt;스크립팅&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;**// 장치 시리얼 번호 출력**
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb get-serialno
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;**// 장치 상태 문자열로 출력**
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb get-state
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;**// 장치 구동시 명령어 실행**
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb wait-for-device &amp;lt;명령어&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;서버&#34;&gt;&lt;strong&gt;서버&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;**// ADB 서버 프로세스 동작여부 확인후 결과 표시, 동작중이지 않으면 서버 구동시킴**
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb start-server
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;**// 서버종료**
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb kill-server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;버그-보고서&#34;&gt;&lt;strong&gt;버그 보고서&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;adb bugreport
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Android 취약점</title>
+        <link>https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/</link>
+        <pubDate>Fri, 01 Apr 2022 07:00:11 +0900</pubDate>
+        
+        <guid>https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/</guid>
+        <description>&lt;h1 id=&#34;android-취약점&#34;&gt;Android 취약점&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;android App 기능 혹은 잘못된 설정에 의한 취약점&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Android 취약점 관련 진단 항목 (금취분평 기준)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;화면 강제실행에 의한 인증단계 우회&lt;/li&gt;
+&lt;li&gt;인증 및 인가 관련 항목&lt;/li&gt;
+&lt;li&gt;정보 노출 관련 항목&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Android 취약점 발견 위치&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Activity&lt;/li&gt;
+&lt;li&gt;Broadcase Receiver&lt;/li&gt;
+&lt;li&gt;Content Provider&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;activity-컴포넌트-취약점&#34;&gt;Activity 컴포넌트 취약점&lt;/h2&gt;
+&lt;p&gt;Android Activity는 화면에 표시되는 UI 구성을 위해 가장 기본이 되는 요소이며, 각각 독립적으로 동작하기 때문에 보안적으로 취약하게 선언되어 있을 경우, 원하는 activity를 강제로 호출 가능한 취약점&lt;/p&gt;
+&lt;h3 id=&#34;위협&#34;&gt;위협&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;공격자가 필요한 Activity를 강제로 호출하며 , 해당 취약점을 악용하는 경우 &lt;code&gt;인증절차&lt;/code&gt;를 우회하여 권한이 없는 Activity에 접근하여 특정 기능을 사용할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;진단방법&#34;&gt;진단방법&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;ADB활용 Activity 취약점 확인&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;AndroidManifest.xml 확인&lt;br&gt;
+&lt;code&gt;activity android:exported=&amp;quot;true&amp;quot;&lt;/code&gt;   다른 애플리케이션에서 activity 실행 가능&lt;br&gt;
+&lt;code&gt;activity android:exported=&amp;quot;false&amp;quot;&lt;/code&gt;   동일한 애플리케이션 또는 UID를 가진 애플리케이션에서만 실행 가능&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ADB를 이용한 Activity 실행 (am 명령어 사용)&lt;br&gt;
+&lt;code&gt;adb shell am start -n 패키지명/.Activity 경로&lt;/code&gt;&lt;br&gt;
+활성화 된 Activity 내 기능 사용 가능 확인
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 580; 
+			flex-basis: 1393px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and1.png&#34; data-size=&#34;714x123&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and1.png&#34;
+			width=&#34;714&#34;
+			height=&#34;123&#34;
+			srcset=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and1_hu32f964d0db777d2baa23b28aabab28a4_121132_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and1_hu32f964d0db777d2baa23b28aabab28a4_121132_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Drozer 활용 Activity 취약점 확인&lt;/strong&gt;
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 188; 
+			flex-basis: 453px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/tmp.png&#34; data-size=&#34;1197x634&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/tmp.png&#34;
+			width=&#34;1197&#34;
+			height=&#34;634&#34;
+			srcset=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/tmp_huc2ad577ce75ab133bcea0f9097fdf731_447283_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/tmp_huc2ad577ce75ab133bcea0f9097fdf731_447283_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;대응방안&#34;&gt;대응방안&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;노출된 Activity에 바로 접근하지 못하도록 exported 속성을 false로 변경&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;진단-시-주의사항-및-팁&#34;&gt;진단 시 주의사항 및 팁&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;진단 시 AndroidManifest.xml 파일을 잘 분석해야하며, 여기서 해당 취약점이 존재하는지 파악할 수 있음&lt;/li&gt;
+&lt;li&gt;인증과 관련된 Activity에서 해당 취약점이 많이 발견됨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&#34;broadcase-receiver-취약점&#34;&gt;Broadcase Receiver 취약점&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Android Broadcase Receiver는 백그라운드에서 대기하고 있다가 이벤트 발생 시 시스템에서 전달한 메시지 Intent를 모든 애플리케이션에게 전달하는 역할. 메시지를 수신한 애플리케이션은 그에 맞는 응답 메시지를 사용자에게 전달&lt;/p&gt;
+&lt;h3 id=&#34;위협-1&#34;&gt;위협&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;공격자는 시스템 대신 임의의 악의적인 메시지를 특정 애플리케이션의 노출된 Receiver에 전송하여 응답오는 데이터를 가로채는 행위를 할 수 있음&lt;/li&gt;
+&lt;li&gt;응답되는 데이터에 애플리케이션이 가지고 있는 중요정보(개인정보, 계정정보)가 포함되어 있을 경우 탈취 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 304; 
+			flex-basis: 731px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and2.png&#34; data-size=&#34;2122x696&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and2.png&#34;
+			width=&#34;2122&#34;
+			height=&#34;696&#34;
+			srcset=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and2_huc24f66ba51e73c236797f3deb106b09c_517107_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and2_huc24f66ba51e73c236797f3deb106b09c_517107_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;진단방법-1&#34;&gt;진단방법&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;ADB활용 Boradcase Receiver 취약점 확인&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AndroidManifest.xml 확인&lt;br&gt;
+&lt;code&gt;receiver android:exported=&amp;quot;true&amp;quot;&lt;/code&gt; -&amp;gt; 다른 애플리케이션에서 intent 가능&lt;br&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;ADB를 이용한 BroadCase 생성 (am 명령어 사용) &lt;br&gt;
+&lt;code&gt;adb shell am broadcase -a Action_name -n 패키지명/.Receiver경로&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 479; 
+			flex-basis: 1149px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and3.png&#34; data-size=&#34;896x187&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and3.png&#34;
+			width=&#34;896&#34;
+			height=&#34;187&#34;
+			srcset=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and3_hufb79ad8f6866959b542c5b2eb57f5805_239231_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and3_hufb79ad8f6866959b542c5b2eb57f5805_239231_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Broadcase 생성 결과는 App 구현에 따라 다르며, App log 정보(logcat)나 App 알람을 통해 확인 가능&lt;/p&gt;
+&lt;h3 id=&#34;대응방안-1&#34;&gt;대응방안&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;노출된 Broadcase Receiver에 외부 애플리케이션에서 발생하는 intent에 영향을 받지 않도록 exported 속성을 false로 변경&lt;/li&gt;
+&lt;li&gt;각 Receiver 별로 권한(Permission)을 주어 외부 애플리케이션에 대한 접근 권한을 관리&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;진단-시-주의사항-및-팁-1&#34;&gt;진단 시 주의사항 및 팁&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;진단 시 &lt;code&gt;Androidmanifest.xml&lt;/code&gt; 파일을 잘 분석해야하며, 여기서 해당 취약점이 존재하는지 파악할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&#34;content-provider-취약점&#34;&gt;Content Provider 취약점&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Content Provider는 다른 애플리케이션의 데이터베이스나 파일에 접글할 수 있는 인터페이스를 제공, 허용된 데이터, 파일에만 접근 가능하도록 하는 권한 설정이 부재일 때 발생하는 취약점&lt;/p&gt;
+&lt;h3 id=&#34;위협-2&#34;&gt;위협&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;공격자는 사용자가 공유하기를 원하는 데이터 외 데이터에 비정상적으로 접근하여 중요한떼이터 조회/변경 등 악의적인 행동을 할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 266; 
+			flex-basis: 639px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and4.png&#34; data-size=&#34;2260x848&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and4.png&#34;
+			width=&#34;2260&#34;
+			height=&#34;848&#34;
+			srcset=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and4_huc77e84ae7f886f77a1c2941d731a4913_675342_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and4_huc77e84ae7f886f77a1c2941d731a4913_675342_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;진단방법-2&#34;&gt;진단방법&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;ADB 활용 Content Provider 취약점 확인&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;AndroidManifest.xml 확인&lt;br&gt;
+&lt;code&gt;provider android:exported=&amp;quot;true&amp;quot;&lt;/code&gt; -&amp;gt; 다른 애플리케이션에서 provider 실행 가능
+&lt;code&gt;provider android:exported=&amp;quot;false&amp;quot;&lt;/code&gt; -&amp;gt; 동일한 애플리케이션 또는 UID를 가진 애플리케이션에서만 실행 가능 &lt;br&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Content URI 탐색&lt;br&gt;
+디컴파일한 소스코드 내 노출된 Content URI를 검색 &lt;code&gt;(keyword: content://)&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ADB를 이용한 Cotent Provider 확인&lt;br&gt;
+&lt;code&gt;adb shell content query --uri content경로&lt;/code&gt; -&amp;gt; 2번에서 확인된 경로&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 717; 
+			flex-basis: 1722px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and5.png&#34; data-size=&#34;897x125&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and5.png&#34;
+			width=&#34;897&#34;
+			height=&#34;125&#34;
+			srcset=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and5_hub761c5880c9af4716b21b4f2c3eefa8a_131355_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/and5_hub761c5880c9af4716b21b4f2c3eefa8a_131355_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;
+-&amp;gt; 외부 애플리케이션에서 providerd에 노출된 content에 접근하여 user 로그인 로그를 확인할 수 있다&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Drozer 활용 Content Provider 취약점 확인&lt;/strong&gt;
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 171; 
+			flex-basis: 412px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/tmp2.png&#34; data-size=&#34;2246x1308&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/tmp2.png&#34;
+			width=&#34;2246&#34;
+			height=&#34;1308&#34;
+			srcset=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/tmp2_hu78369faefc57f82221bd930637b55271_1583959_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/tmp2_hu78369faefc57f82221bd930637b55271_1583959_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 107; 
+			flex-basis: 257px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/tmp3.png&#34; data-size=&#34;1212x1130&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/tmp3.png&#34;
+			width=&#34;1212&#34;
+			height=&#34;1130&#34;
+			srcset=&#34;https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/tmp3_hu7865e7f5edf3f455ed8d4ba1cd8a9b0e_659436_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android_%EC%B7%A8%EC%95%BD%EC%A0%90/tmp3_hu7865e7f5edf3f455ed8d4ba1cd8a9b0e_659436_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;대응방안-2&#34;&gt;대응방안&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Content Provider에 안전한 Permission을 설정 (protectionLevel 속성 이용)&lt;br&gt;
+&lt;code&gt;nomal&lt;/code&gt; : protectionLevel의 기본 값으로서 단순히 기능을 사용하기 위한 식별 값으로 사용되는 퍼미션&lt;br&gt;
+&lt;code&gt;dangerous&lt;/code&gt; : 사용자 개인 데이터나 시스템 제어 기능을 식별하는 퍼미션&lt;br&gt;
+&lt;code&gt;signature&lt;/code&gt; : 동일한 서명 값으로 컴파일 된 앱끼리 기능을 허용하고자 할 때 사용하는 퍼미션&lt;br&gt;
+&lt;code&gt;system&lt;/code&gt; : 안드로이드 시스템 이미지로 설치되는 앱을 허용 할 때 사용하는 퍼미션&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;진단-시-주의사항-및-팁-2&#34;&gt;진단 시 주의사항 및 팁&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;진단 시 &lt;code&gt;Androidmanifest.xml&lt;/code&gt; 파일을 잘 분석해야하며, 여기서 해당 취약점이 존재하는지 파악할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Android App 데이터 변조</title>
+        <link>https://kazal92.github.io/android/data-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%80%EC%A1%B0/</link>
+        <pubDate>Fri, 01 Apr 2022 06:19:08 +0900</pubDate>
+        
+        <guid>https://kazal92.github.io/android/data-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%80%EC%A1%B0/</guid>
+        <description>&lt;h1 id=&#34;app-데이터-변조-진단&#34;&gt;App 데이터 변조 진단&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;App이 서버와 통신하는 데이터 혹은 앱 내부에서 전달되는 함수 인자, 반환값 데이터 등을 변조하여 App 실행 흐름을 바꾸거나, 개발자가 의도하지 않은 동작을 유발할 수 있음&lt;/li&gt;
+&lt;li&gt;인증 우회나 인젝션 등 App 서비스에 대한 공격이 데이터 변조로 주로 이루어짐&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;데이터 변조에 관련된 진단 항목(금취분평 기준)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;데이터를 변조하는 모든 진단 항목 (SQL 인젝션 , 인증, 인가와 관련된 취약점 등)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;데이터 변조 위치&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;네트워크 통신 데이터 변조 : TCP 통신, HTTP 통신&lt;/li&gt;
+&lt;li&gt;메모리 내 데이터 변조 : 함수 인자, 반환값, 메모리 영역 데이터 변조&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&#34;네트워크-통신-구간-데이터-변조&#34;&gt;네트워크 통신 구간 데이터 변조&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;App 서버와 통신을 하는 과정에서 통신 데이터를 분석하고, 데이터를 변조함으로써 인증 우회, 파라미터 변조 등 다양한 공격을 수행 할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;네트워크-통신&#34;&gt;네트워크 통신&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;TCP 통신&lt;br&gt;
+Native App, Hybrid App에서 앱 서버와 HTTP 통신이 아닌 TCP 통신을 하여 데이터를 주고 받는 경우가 있음. 이럴 경우 TCP Proxy를 사용하여 통신 데이터 분석 및 데이터 변조하여 진단 해야함&lt;br&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;HTTP 통신&lt;br&gt;
+Web App, Hybrid App에서 웹 서버와 HTTP 통신을 하여 데이터를 주고 받는 경우가 있음. 이럴 경우 HTTP Proxy를 사용하여 통신 데이터 분석 및 데이터 변조를 하여 진단해야 함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&#34;메모리-데이터-변조&#34;&gt;메모리 데이터 변조&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;App 실행 중 함수의 인자값 혹은 반환값, 임의 함수 실행 및 조작을 통해 App 클라이언트에서 이루어지는 인증 로직을 우회할 수 있고, App의 실행 흐름을 조작할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;메모리-데이터-변조-방법&#34;&gt;메모리 데이터 변조 방법&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;DBI(Dynamic Binary Instrument) 사용 : Frida&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;메모리-데이터-변조-이용&#34;&gt;메모리 데이터 변조 이용&lt;/h3&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;U&gt;App Function 인자값&amp;리턴값 변조&lt;/U&gt;&lt;/summary&gt;
+&lt;div mardown=&#34;1&#34;&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 267; 
+			flex-basis: 642px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/data-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%80%EC%A1%B0/tampering1.png&#34; data-size=&#34;2050x766&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/data-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%80%EC%A1%B0/tampering1.png&#34;
+			width=&#34;2050&#34;
+			height=&#34;766&#34;
+			srcset=&#34;https://kazal92.github.io/android/data-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%80%EC%A1%B0/tampering1_hu52dbe509a40d996222017c0f6a807b41_887097_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/data-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%80%EC%A1%B0/tampering1_hu52dbe509a40d996222017c0f6a807b41_887097_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;U&gt;App so Library Function 후킹 (Dynamic Load)&lt;/U&gt;&lt;/summary&gt;
+&lt;div markdown=&#34;1&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#776e71&#34;&gt;// 특정 라이브러리가 로드 되었을 때, 후킹하고 싶은 경우
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#776e71&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;send&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;[*] Injected JS&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#815ba4&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;didHookapis&lt;/span&gt; &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#815ba4&#34;&gt;false&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#776e71&#34;&gt;// if it used &amp;#34;System.loadLibrary&amp;#34;, we have hokk &amp;#34;android_dlopen_ext&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#776e71&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;Interceptor&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;attach&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;Module&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;findExportByName&lt;/span&gt;(&lt;span style=&#34;color:#815ba4&#34;&gt;null&lt;/span&gt;, &lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;dlopen&amp;#39;&lt;/span&gt;), {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#06b6ef&#34;&gt;onEnter&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#815ba4&#34;&gt;function&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;args&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#815ba4&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;path&lt;/span&gt; &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;Memory&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;readUtf8String&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;args&lt;/span&gt;[&lt;span style=&#34;color:#f99b15&#34;&gt;0&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#06b6ef&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#815ba4&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;path&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#06b6ef&#34;&gt;onLeave&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#815ba4&#34;&gt;function&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;retval&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#815ba4&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#5bc4bf&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;retval&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;isNull&lt;/span&gt;() &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#815ba4&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;path&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;indexOf&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#39;libdivajni.so&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#5bc4bf&#34;&gt;!==&lt;/span&gt; &lt;span style=&#34;color:#5bc4bf&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#5bc4bf&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#06b6ef&#34;&gt;didHookapis&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#06b6ef&#34;&gt;didHookapis&lt;/span&gt; &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#815ba4&#34;&gt;true&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#06b6ef&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;File loaded hooking&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#06b6ef&#34;&gt;so_hook&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#815ba4&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;so_hook&lt;/span&gt;(){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#815ba4&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;so_target&lt;/span&gt; &lt;span style=&#34;color:#5bc4bf&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;Module&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;findExportByName&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;libdivajni.so&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;Java_jakhar_aseem_diva_DivaJni_initiateLaunchSequence&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#06b6ef&#34;&gt;Interceptor&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;attach&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;so_target&lt;/span&gt;, {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#06b6ef&#34;&gt;onLeave&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#815ba4&#34;&gt;function&lt;/span&gt;(&lt;span style=&#34;color:#06b6ef&#34;&gt;retval&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#06b6ef&#34;&gt;retval&lt;/span&gt;.&lt;span style=&#34;color:#06b6ef&#34;&gt;replace&lt;/span&gt;(&lt;span style=&#34;color:#f99b15&#34;&gt;1&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#06b6ef&#34;&gt;send&lt;/span&gt;(&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;Function Called!!&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;U&gt;App Function 재정의&lt;/U&gt;&lt;/summary&gt;
+&lt;div mardown=&#34;1&#34;&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 442; 
+			flex-basis: 1061px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/data-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%80%EC%A1%B0/tampering2.png&#34; data-size=&#34;2088x472&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/data-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%80%EC%A1%B0/tampering2.png&#34;
+			width=&#34;2088&#34;
+			height=&#34;472&#34;
+			srcset=&#34;https://kazal92.github.io/android/data-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%80%EC%A1%B0/tampering2_huf14c2bd3526603af1d302eb1c8af3344_550620_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/data-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%80%EC%A1%B0/tampering2_huf14c2bd3526603af1d302eb1c8af3344_550620_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;U&gt;App Function 호출&lt;/U&gt;&lt;/summary&gt;
+&lt;div mardown=&#34;1&#34;&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 318; 
+			flex-basis: 764px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/data-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%80%EC%A1%B0/tampering3.png&#34; data-size=&#34;2210x694&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/data-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%80%EC%A1%B0/tampering3.png&#34;
+			width=&#34;2210&#34;
+			height=&#34;694&#34;
+			srcset=&#34;https://kazal92.github.io/android/data-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%80%EC%A1%B0/tampering3_hu0d71e70e22c576c8674dd11e3f8b21ae_881105_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/data-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%80%EC%A1%B0/tampering3_hu0d71e70e22c576c8674dd11e3f8b21ae_881105_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+</description>
+        </item>
+        <item>
+        <title>Android App 정보노출 진단</title>
+        <link>https://kazal92.github.io/android/information_disclosure/</link>
+        <pubDate>Fri, 01 Apr 2022 05:16:13 +0900</pubDate>
+        
+        <guid>https://kazal92.github.io/android/information_disclosure/</guid>
+        <description>&lt;h1 id=&#34;정보-노출-진단&#34;&gt;정보 노출 진단&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;App의 동작으로 인해 노출 되서는 안되는 정보들이 노출되는 취약점&lt;/li&gt;
+&lt;li&gt;App이 실행 중 사용자의 개인정보, 중요정보를 단말기에 저장할 경우, 단말기가 공격자에 의해 탈취 당하거나 악성 앱이 설치되어 단말기에 저장된 중요정보들이 노출될 수 있음&lt;/li&gt;
+&lt;li&gt;App 통신 패킷이나 실행 파일에서 서버의 중요정보들이 노출되어 2차 공격에 이용될 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;정보 노출의 위험도&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;서버의 중요 정보의 중요도에 따라 위험도는 높아질 수 있음&lt;/li&gt;
+&lt;li&gt;단말기 내에서 노출되는 개인정보, 중요정보 등은 실제 공격에서는 가정되어야 하는 조건(루팅, 잠금 설정 우회 등)이 많지만 무시할 수 없음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;정보 노출관련된 진단 항목 (금취분평 기준)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;금취분평 pdf 구해보자..;&lt;/p&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&#34;소스-코드에서의--정보노출&#34;&gt;소스 코드에서의  정보노출&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;App 바이트 코드(dex), 디컴파일 소스 내에 존재하는 문자열에서 중요정보가 노출됨&lt;/p&gt;
+&lt;h3 id=&#34;주요-노출정보&#34;&gt;주요 노출정보&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;string keyword : ip, port, user, password, key, http 등&lt;/li&gt;
+&lt;li&gt;내부 연동 서버 IP 및 포트 정보&lt;/li&gt;
+&lt;li&gt;관리자 계정&lt;/li&gt;
+&lt;li&gt;관리자 페이지 정보(URL)&lt;/li&gt;
+&lt;li&gt;DB 서버 및 계정 정보&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;app-바이트-코드-내-string-추출&#34;&gt;App 바이트 코드 내 String 추출&lt;/h3&gt;
+&lt;p&gt;App 바이트 코드를 추출하여 바이트 코드내 String 검색&lt;/p&gt;
+&lt;h3 id=&#34;정적-분석-tool-활용하여-string-확인&#34;&gt;정적 분석 Tool 활용하여 String 확인&lt;/h3&gt;
+&lt;p&gt;IDA,jadx 등 Tool을 활용하여 디컴파일한 소스코드 내 String 검색&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;대응 방안&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;서비스에 사요되지 않는 개발용 서버정보들을 소스 코드에서 삭제&lt;/li&gt;
+&lt;li&gt;관리자 계정 정보 등 하드코딩 되어있는 인증 정보들은 소스 코드에서 삭제&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;진단 시 주의사항 및 팁&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;실제로 통신하는 서버 정보는 App에 들어가 있을 수 밖에 없기때문에 이를 보고 취약하다고 판단해서는 안됨&lt;/li&gt;
+&lt;li&gt;정적 분석 과정 중에서만 이 부분을 체크한다면 부석하지 못한 함수가 발생할 수 있으니, App 바이너리에서 String들을 한번씩 꼭 확인해볼 필요가 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&#34;단말기-내-사용자-정보-저장&#34;&gt;단말기 내 사용자 정보 저장&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;App 폴더 및 외부 저장소에 존재하는 파일 내에 사용자의 인증정보 및 개인정보들이 평문 또는 취약한 암호로 저장되어 노출됨&lt;/p&gt;
+&lt;h3 id=&#34;주요-노출-정보&#34;&gt;주요 노출 정보&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Search File : .db, shared_prefs, cache 등&lt;/li&gt;
+&lt;li&gt;개인정보&lt;/li&gt;
+&lt;li&gt;계정정보(자동로그인)&lt;/li&gt;
+&lt;li&gt;인증정보&lt;/li&gt;
+&lt;li&gt;암/복호화 키&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;진단-방법&#34;&gt;진단 방법&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;SharedPreference&lt;/li&gt;
+&lt;li&gt;SD Card&lt;/li&gt;
+&lt;li&gt;안전하지 않은 외부 저장소&lt;/li&gt;
+&lt;li&gt;클립보드, 자동완성&lt;/li&gt;
+&lt;li&gt;정보 입력 후 변경된 파일 확인&lt;/li&gt;
+&lt;li&gt;명령어 팁&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;대응-방안&#34;&gt;대응 방안&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;androidallowbackup 설정&lt;/li&gt;
+&lt;li&gt;Keystore 사용하여 안전한 키관리&lt;/li&gt;
+&lt;li&gt;자동완성, 클립보드 (서비스 영향도 파악하여 설정 고려)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;진단-시-주의-사항-및-팁&#34;&gt;진단 시 주의 사항 및 팁&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;단말기 내 알지 못하는 파일들로 중요 정보가 저장될 수 있으므로 파일 수정 시간을 체크하여 해당 취약점이 누락되지 않도록 점검해야함&lt;/li&gt;
+&lt;li&gt;중요 정보가 암호화 되어있어 보여도, MD5 디코딩으로 평무닝 되거나 복호화 키가 단말기 안전하지 않은 영역에 저장되어 있을 경우가 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&#34;메모리-내-중요-정보-노출&#34;&gt;메모리 내 중요 정보 노출&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;이용자 단말기 메모리 내 개인정보 등 중요한 정보들이 평문 또는 취약한 암호화로 저장되어 노출됨&lt;/p&gt;
+&lt;h3 id=&#34;주요-노출-중요-정보&#34;&gt;주요 노출 중요 정보&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;String Keyword : jumin, token, user, password, key 등&lt;/li&gt;
+&lt;li&gt;개인정보&lt;/li&gt;
+&lt;li&gt;계정정보(자동로그인)&lt;/li&gt;
+&lt;li&gt;인증정보&lt;/li&gt;
+&lt;li&gt;암/복호화 키&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;진단-방법-메모리-덤프&#34;&gt;진단 방법 (메모리 덤프)&lt;/h3&gt;
+&lt;h4 id=&#34;am--am을-사용하여-메모리-덤프&#34;&gt;Am : am을 사용하여 메모리 덤프&lt;/h4&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 893; 
+			flex-basis: 2143px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/information_disclosure/info1.png&#34; data-size=&#34;2126x238&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/information_disclosure/info1.png&#34;
+			width=&#34;2126&#34;
+			height=&#34;238&#34;
+			srcset=&#34;https://kazal92.github.io/android/information_disclosure/info1_hu75432055b0e478ceac3bb551dac494aa_646486_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/information_disclosure/info1_hu75432055b0e478ceac3bb551dac494aa_646486_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;android:debuggable=&amp;ldquo;true&amp;rdquo; 설정 확인 (False일 경우 수정하여 진단)&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;android:debuggable=“true” 설정 확인 (False일 경우 수정하여 진단)&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;메모리 덤프&lt;/strong&gt;
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 1248; 
+			flex-basis: 2995px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/information_disclosure/info2.png&#34; data-size=&#34;2072x166&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/information_disclosure/info2.png&#34;
+			width=&#34;2072&#34;
+			height=&#34;166&#34;
+			srcset=&#34;https://kazal92.github.io/android/information_disclosure/info2_hu5aaa7c3bb9132820de093758e8fbe9d9_375706_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/information_disclosure/info2_hu5aaa7c3bb9132820de093758e8fbe9d9_375706_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;strings을 이용한 문자열 추출&lt;/strong&gt;
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 970; 
+			flex-basis: 2328px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/information_disclosure/info3.png&#34; data-size=&#34;1824x188&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/information_disclosure/info3.png&#34;
+			width=&#34;1824&#34;
+			height=&#34;188&#34;
+			srcset=&#34;https://kazal92.github.io/android/information_disclosure/info3_hu8da3d4e2719c200bbf261f9881672876_450930_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/information_disclosure/info3_hu8da3d4e2719c200bbf261f9881672876_450930_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;fridump--frida를-사용하여-메모리-덤프&#34;&gt;Fridump : frida를 사용하여 메모리 덤프&lt;/h4&gt;
+&lt;h3 id=&#34;대응-방안-1&#34;&gt;대응 방안&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;중요 정보를 입력 받는 경우 가상 키패드를 사용하여 사용자의 입력부터 암호화를 적용해 데이터를 보호해야됨&lt;/li&gt;
+&lt;li&gt;주요 정보 및 개인정보의 경우 사용된 후 바로 메모리에서 사리질 수 있도록 화면이 넘어가기 전 해당 내용을 다른 내용으로 덮어쓰기&lt;/li&gt;
+&lt;li&gt;웹 Response에서 노출되는 중요 정보들은 웹 Response에서 중요 정보들이 마스킹 되어 응답 되도록 수정하는 것을 ㅗ해당 취약점을 보완할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;진단-시-주의-사항-및-팁-1&#34;&gt;진단 시 주의 사항 및 팁&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;사용자의 개인 정보, 중요 정보를 일반 키패드로 입력을 받고 있는 경우 메모리에 노출되고 있을 가능성이 크기 때문에 주의해서 확인해 봐야함 (주민등록번호, 인증번호, 비밀번호 등)&lt;/li&gt;
+&lt;li&gt;웹 Response도 메모리에 작성되기 때문에 웹 Response에서 중요 정보가 포함되어 있는지 확인해 봐야함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&#34;네트워크에서의-정보-노출&#34;&gt;네트워크에서의 정보 노출&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;네트워크 통신 상에서 중요정보가 평문으로 노출되는 경우&lt;/p&gt;
+&lt;h3 id=&#34;주요-노출-중요-정보-1&#34;&gt;주요 노출 중요 정보&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Search Keyword : ip, port, user, password, key 등&lt;/li&gt;
+&lt;li&gt;계정정보(ID,PW)&lt;/li&gt;
+&lt;li&gt;인증정보&lt;/li&gt;
+&lt;li&gt;개인정보&lt;/li&gt;
+&lt;li&gt;서버 중요정보&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;진단-방법-1&#34;&gt;진단 방법&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Tcpdump&lt;/li&gt;
+&lt;li&gt;Proxy tool -&amp;gt; http 통신 분석&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;대응-방안-2&#34;&gt;대응 방안&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;주요 정보를 주고 받을 때는 평문으로 노출되지 않도록 암호화 통신을 적용해야 함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;주의-사항-및-팁&#34;&gt;주의 사항 및 팁&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;HTTPS 통신의 경우 암호화가 적용되어 데이터가 전달됙 때문에 인증서가 설치되어 있기 때문에 Proxy Tool을 이용해 평문으로 보인다고 취약하다고 판단해서는 안됨&lt;/li&gt;
+&lt;li&gt;Proxy Tool을 이용해 취약점을 확인하여도 tcpdump 등 네트워크 패킷을 캡쳐하여 실제로 네트워크 구간에서 평문으로 오가는지 확인해야함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&#34;백그라운드-화면-정보-노출&#34;&gt;백그라운드 화면 정보 노출&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;앱이 백그라운드 모드로 전환될 때 저장되는 스크린샷에서 개인의 정보가 평문으로 노출될 수 있음&lt;/p&gt;
+&lt;h3 id=&#34;주요-노출-중요-정보-2&#34;&gt;주요 노출 중요 정보&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Search Keyword : 화면에 노출되는 개인정보&lt;/li&gt;
+&lt;li&gt;개인정보&lt;/li&gt;
+&lt;li&gt;인증정보&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;진단-방법-2&#34;&gt;진단 방법&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;앱을 백그라운드 모드로 전환한 뒤 화면이 보호되는지 확인&lt;/li&gt;
+&lt;li&gt;화면이 보호되지 않고 있다면 단말기에 저장된 이미지 추출&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;대응-방안-3&#34;&gt;대응 방안&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;백그라운드로 전환될 때 임의 지정한 사진 파일이 저장 될 수 있도록 변경해야함
+ex) FLAG_SECURE 사용&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;주의-사항-및-팁-1&#34;&gt;주의 사항 및 팁&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;백그라운드 전환 후 이미지 파일을 추출하여 고객사에게 설명 (개인정보 포함되서 보이는 이미지)&lt;/li&gt;
+&lt;li&gt;백그라운드 스냅샷 경로는 기기 혹은 OS 버전 별로 다를 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 318; 
+			flex-basis: 765px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/information_disclosure/info4.png&#34; data-size=&#34;1734x544&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/information_disclosure/info4.png&#34;
+			width=&#34;1734&#34;
+			height=&#34;544&#34;
+			srcset=&#34;https://kazal92.github.io/android/information_disclosure/info4_huc9218bb80b3549b2b87f4bc68514b65f_694782_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/information_disclosure/info4_huc9218bb80b3549b2b87f4bc68514b65f_694782_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&#34;디버그-로그에서의-정보-노출&#34;&gt;디버그 로그에서의 정보 노출&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;개발자들이 개발 중 디버깅을 위한 용도로 찍느 ㄴ로그에 개발 서버 정보나 곤리자 서버 주소 등 서버에 민감하고 중요한 정보들이 노출됨&lt;/p&gt;
+&lt;h3 id=&#34;주요-노출-중요-정보-3&#34;&gt;주요 노출 중요 정보&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;string keyword : ip, port, user, password, key, http 등&lt;/li&gt;
+&lt;li&gt;계정정보(ID/PW)&lt;/li&gt;
+&lt;li&gt;개인정보&lt;/li&gt;
+&lt;li&gt;함수 실행 Flow 및 인자, 리턴값&lt;/li&gt;
+&lt;li&gt;연동된 서버정보&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;진단-방법-3&#34;&gt;진단 방법&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Logcat&lt;/li&gt;
+&lt;li&gt;Log.* 함수 분석 (log.d, log.e 등등)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 335; 
+			flex-basis: 804px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/information_disclosure/info5.png&#34; data-size=&#34;2118x632&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/information_disclosure/info5.png&#34;
+			width=&#34;2118&#34;
+			height=&#34;632&#34;
+			srcset=&#34;https://kazal92.github.io/android/information_disclosure/info5_hu5102620ead46783aff2e114b814a4462_1134949_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/information_disclosure/info5_hu5102620ead46783aff2e114b814a4462_1134949_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;대응-방안-4&#34;&gt;대응 방안&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;디버그 로그로 출력되는 중요 정보들을 직접 삭제&lt;/li&gt;
+&lt;li&gt;debuggable 설정을 flase로 배포(release 모드로 배포)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;주의사항-및-팁&#34;&gt;주의사항 및 팁&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;debuggable 옵셜을 true로 바꿔 리패키징한 뒤 디버그 로그 진단 하지 말아야함. debuggable 옵션을 true로 의도적으로 바꿀경우 디버그 로그가 출력되는 것은 당연함, 하지만 서버정보 중요 정보가 노출되는지 확인 하기 위해서는 필요함&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Android App 분석</title>
+        <link>https://kazal92.github.io/android/app_analyze/</link>
+        <pubDate>Fri, 01 Apr 2022 04:15:11 +0900</pubDate>
+        
+        <guid>https://kazal92.github.io/android/app_analyze/</guid>
+        <description>&lt;h2 id=&#34;apk-추출&#34;&gt;APK 추출&lt;/h2&gt;
+&lt;h3 id=&#34;백업-기능을-이용해서-추출&#34;&gt;백업 기능을 이용해서 추출&lt;/h3&gt;
+&lt;p&gt;ASTRO 파일 관리자 설치&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;https://drive.google.com/file/d/1DWBTDjP1HQDAGszkn5fvNkzj0RP0xKnd/view?usp=sharing
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;앱 &amp;gt; 추출할 앱 선택(쭉) &amp;gt; 백업&lt;/p&gt;
+&lt;p align=&#34;left&#34;&gt;&lt;img src=&#34;apk1.png&#34; width=&#34;40%&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ adb shell
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd /sdcard/backups/apps  -&amp;gt; 백업된 앱 경로 및 파일명 확인
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ adb pull /sdcard/backups/apps/jakhar.aseem.diva.apk
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 511; 
+			flex-basis: 1227px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/app_analyze/apk2.png&#34; data-size=&#34;634x124&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/app_analyze/apk2.png&#34;
+			width=&#34;634&#34;
+			height=&#34;124&#34;
+			srcset=&#34;https://kazal92.github.io/android/app_analyze/apk2_hu0628e94bd585de97c437b1343c888fc0_22424_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/app_analyze/apk2_hu0628e94bd585de97c437b1343c888fc0_22424_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 453; 
+			flex-basis: 1089px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/app_analyze/apk3.png&#34; data-size=&#34;708x156&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/app_analyze/apk3.png&#34;
+			width=&#34;708&#34;
+			height=&#34;156&#34;
+			srcset=&#34;https://kazal92.github.io/android/app_analyze/apk3_huab752c6157246425231dcda056cf2629_41388_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/app_analyze/apk3_huab752c6157246425231dcda056cf2629_41388_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;arm-이란&#34;&gt;ARM 이란?&lt;/h2&gt;
+&lt;h3 id=&#34;cisc-vs-risc&#34;&gt;CISC vs RISC&lt;/h3&gt;
+&lt;p&gt;Advanced RISC Machine의 약자 CPU TYPE
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 386; 
+			flex-basis: 928px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/app_analyze/apk4.png&#34; data-size=&#34;1423x368&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/app_analyze/apk4.png&#34;
+			width=&#34;1423&#34;
+			height=&#34;368&#34;
+			srcset=&#34;https://kazal92.github.io/android/app_analyze/apk4_hu03beb17fd55ed5d8ad90036831cd0797_88964_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/app_analyze/apk4_hu03beb17fd55ed5d8ad90036831cd0797_88964_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;arm-모드--thumb-모드í&#34;&gt;ARM 모드 / Thumb 모드Í&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ARM 과 x86 의 가장 큰 차이점은 Thumb 모드가 있다는  것&lt;/li&gt;
+&lt;li&gt;THUMB 모드는 32bit ARM에서 동작하는 16bit 기계어&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;arm-모드--thumb-모드&#34;&gt;ARM 모드 ←→ Thumb 모드&lt;/h3&gt;
+&lt;p&gt;BLX / BX 등  X로 끝나는 분기문 명령으로 모드 전환
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 112; 
+			flex-basis: 270px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/app_analyze/apk5.png&#34; data-size=&#34;493x438&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/app_analyze/apk5.png&#34;
+			width=&#34;493&#34;
+			height=&#34;438&#34;
+			srcset=&#34;https://kazal92.github.io/android/app_analyze/apk5_hu151f0d797bbb0571c3e9e05a869af8f9_156477_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/app_analyze/apk5_hu151f0d797bbb0571c3e9e05a869af8f9_156477_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>smali code</title>
+        <link>https://kazal92.github.io/android/smali_code/</link>
+        <pubDate>Fri, 01 Apr 2022 03:06:10 +0900</pubDate>
+        
+        <guid>https://kazal92.github.io/android/smali_code/</guid>
+        <description>&lt;h2 id=&#34;타입&#34;&gt;타입&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;I – int
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;J – long
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Z – Boolean
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;D – double
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;F – float
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;S – short 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C – char
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;V - void
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;메소드-종류&#34;&gt;메소드 종류&lt;/h2&gt;
+&lt;p&gt;Static : this 인수가 암묵적으로 첫번째 인수로 전달되지 않으면, Static 메소드&lt;br&gt;
+Direct : vtable 개입 없이 직접 invoke 함 (ex. private method, constructor)&lt;br&gt;
+Virtual : 자식 클래스에서 override 될 수 있는 Virtual 메소드. 클래스 관련됨 vtable을 사용해 invoke 함&lt;/p&gt;
+&lt;h3 id=&#34;register-간-데이터-이동&#34;&gt;Register 간 데이터 이동&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;move
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;move/from16
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;move-wide
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;move-wide/from16
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;move-object
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;move-object/from16
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;리턴-세팅-및-처리&#34;&gt;리턴 세팅 및 처리&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;move-result
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;move-result-wide
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;move-result-object
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;return-void
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;return
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;return-wide
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;return-object
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;예외-처리&#34;&gt;예외 처리&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;throw
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;move-exception
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;레지스터에-상수-대입&#34;&gt;레지스터에 상수 대입&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;const/4
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;const
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;인스트럭션 패밀리&lt;/p&gt;
+&lt;h3 id=&#34;레지스터간-move&#34;&gt;레지스터간 move&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;move, move/from16, move-wide, move-wide/from16, move-object, move-object/from16
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;결과값을-얻거나-세팅&#34;&gt;결과값을 얻거나 세팅&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;move-result, move-result-wide, move-result-object, return-void, return,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;return-wide, return-object
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;예외처리&#34;&gt;예외처리&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;throw, move-exception
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;레지스터에-상수-대입-1&#34;&gt;레지스터에 상수 대입&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;const/4, const/16, const, const/high16, const-wide/1, const-wide/32,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;const-wide, const-wide/high16, const-string, const-class
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;동기화&#34;&gt;동기화&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;monitor-enter, monitor-exit
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;타입체크&#34;&gt;타입체크&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;check-cast, instance-of
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;배열-조작&#34;&gt;배열 조작&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;new-array, array-length, filled-new-array, filled-new-array/range,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fill-array-data
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;인스턴스생성&#34;&gt;인스턴스생성&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;new-instance
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;실행-조작&#34;&gt;실행 조작&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;goto, goto/16, packed-switch, sparse-switch,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;if-eq, if-ne, if-lt, if-ge, if-gt, if-le, if-eqz, if-nez, if-ltz, if-gez, if-gtz,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;if-lez
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;비교&#34;&gt;비교&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cmpl-float
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cmpg-float
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cmpl-double
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cmpl-double
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cmpg-double
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cmp-long
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;멤버필드에-읽기쓰기&#34;&gt;멤버필드에 읽기/쓰기&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;iget
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;iget-wide
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;iget-object
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;iget-boolean
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;iget-byte
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;iget-char
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;iget-short
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;배열요소에-읽기쓰기&#34;&gt;배열요소에 읽기/쓰기&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;aget
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;aget-wide
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;aget-object
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;aget-boolean
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;aget-byte
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;aget-char
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;aget-short
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;메소드-호출&#34;&gt;메소드 호출&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;invoke-virtua
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;invoke-super
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;invoke-direct
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;invoke-static
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;invoke-interface
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;invoke-virtual/range
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;invoke-super/range
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;invoke-direct/range
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;invoke-static/range
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;invoke-interface/range
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;연산-명령int-long-float-double&#34;&gt;연산 명령(int, long, float, double)&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;add
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sub
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mul
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;div
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rem
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;smali-snippet&#34;&gt;Smali snippet&lt;/h2&gt;
+&lt;h3 id=&#34;so-라이브러리-로드&#34;&gt;so 라이브러리 로드&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;const-string v0, &amp;#34;so_file_name&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;invoke-static {v0}, Ljava/lang/System;-&amp;gt;loadLibrary(Ljava/lang/String;)V
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;로그-출력&#34;&gt;로그 출력&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.local v0, &amp;#34;Log&amp;#34;:Ljava/lang/String;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;const-string v1,  &amp;#34;hack&amp;#34; //출력할 문자열 혹은 레지스터
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;invoke-static {v1, v0}, Landroid/util/Log;-&amp;gt;e(Ljava/lang/String;Ljava/lang/String;)I
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;sleep&#34;&gt;sleep&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;const-wide/16 v2, 0xa  // 0xa = 10
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;invoke-static {v2, v3}, Ljava/lang/Thread;-&amp;gt;sleep(J)V
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;toast-출력&#34;&gt;toast 출력&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;const-string v0, &amp;#34;Toast TEST&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;const/4 v1, 0x0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;invoke-static {p0, v0, v1}, Landroid/widget/Toast;-&amp;gt;makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;move-result-object v0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;invoke-virtual {v0}, Landroid/widget/Toast;-&amp;gt;show()V
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Android 보안 솔루션</title>
+        <link>https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/</link>
+        <pubDate>Wed, 30 Mar 2022 23:39:15 +0900</pubDate>
+        
+        <guid>https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/</guid>
+        <description>&lt;h1 id=&#34;android-보안-솔루션&#34;&gt;Android 보안 솔루션&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&#34;루팅-탐지&#34;&gt;루팅 탐지&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;공격자들의 App 분석 및 공격을 방해하기 위해 탐지&lt;/li&gt;
+&lt;li&gt;사용자들에게 해당 App이 루팅된 기기에서 실행될 경우 위험하다는 것을 경고하기 위해 탐지 (특히, 금융App)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;루팅-탐지-원리&#34;&gt;루팅 탐지 원리&lt;/h3&gt;
+&lt;p&gt;루팅이 되었을 때 나타나는 특징들을 확인하여 루팅을 탐지&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 597; 
+			flex-basis: 1433px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_1.png&#34; data-size=&#34;1320x221&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_1.png&#34;
+			width=&#34;1320&#34;
+			height=&#34;221&#34;
+			srcset=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_1_huea260641547760bb2c66b9e435222159_229200_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_1_huea260641547760bb2c66b9e435222159_229200_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;루팅-탐지-방법&#34;&gt;루팅 탐지 방법&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;설치된 package 확인&lt;/li&gt;
+&lt;li&gt;루팅했을 때 설치되는 App이 존재하는지 확인하여 루팅 탐지&lt;/li&gt;
+&lt;li&gt;pm을 이용하여 확인&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 243; 
+			flex-basis: 583px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_2.png&#34; data-size=&#34;1889x777&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_2.png&#34;
+			width=&#34;1889&#34;
+			height=&#34;777&#34;
+			srcset=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_2_hu02c1ed7ea4b286f4a9f8017ce27aa212_824763_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_2_hu02c1ed7ea4b286f4a9f8017ce27aa212_824763_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;파일 확인&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;su binary, busybox 등 파일 확인&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 203; 
+			flex-basis: 488px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_3.png&#34; data-size=&#34;2030x997&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_3.png&#34;
+			width=&#34;2030&#34;
+			height=&#34;997&#34;
+			srcset=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_3_huf324323f144d3c5943f89150f1c863cd_1069677_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_3_huf324323f144d3c5943f89150f1c863cd_1069677_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;build.prop 파일에서 기본값 확인&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;루팅을 하게 되면 /system/build.prop 파일에 test-keys로 설정 되어 있는 것을 확인&lt;/li&gt;
+&lt;li&gt;안드로이드에서 ro.build.tag 릴리즈 키로 설정되어 있는데 루팅을 한경우 test-keys로 설정됨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 329; 
+			flex-basis: 790px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_4.png&#34; data-size=&#34;1562x474&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_4.png&#34;
+			width=&#34;1562&#34;
+			height=&#34;474&#34;
+			srcset=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_4_hu66981efbf4f6e9c5e033d5092e6131aa_407587_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_4_hu66981efbf4f6e9c5e033d5092e6131aa_407587_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Directory Permission 확인&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;system directory 등의 디렉토리의 권한을  변경했는지 체크&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 156; 
+			flex-basis: 375px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_5.png&#34; data-size=&#34;1509x965&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_5.png&#34;
+			width=&#34;1509&#34;
+			height=&#34;965&#34;
+			srcset=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_5_hu3a185cb289e49b076161a108dc49d52a_430452_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_5_hu3a185cb289e49b076161a108dc49d52a_430452_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;마운트 정보를 확인하여 rw 권한을 확인, 테스트 파일을 임의 경로로 생성하여 생성이 되는지 확인&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 233; 
+			flex-basis: 561px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_6.png&#34; data-size=&#34;1978x846&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_6.png&#34;
+			width=&#34;1978&#34;
+			height=&#34;846&#34;
+			srcset=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_6_huf04fcea2ac694c7c1ccabbaaf8a5d741_631969_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/img_6_huf04fcea2ac694c7c1ccabbaaf8a5d741_631969_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&#34;무결성-검증&#34;&gt;무결성 검증&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&#34;anti-debugging&#34;&gt;Anti-Debugging&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&#34;문자열-난독화&#34;&gt;문자열 난독화&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&#34;mobile-solution-trick&#34;&gt;Mobile Solution Trick&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;1-decompile-방해&#34;&gt;1. Decompile 방해&lt;/h3&gt;
+&lt;p&gt;decompile tool이 정상적으로 동적하지 못하도록해 분서을 어렵게 만듬&lt;/p&gt;
+&lt;p&gt;ex) Invlid fill-array-data trick, Trunchted method trick&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 217; 
+			flex-basis: 522px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/tmp1.png&#34; data-size=&#34;1269x583&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/tmp1.png&#34;
+			width=&#34;1269&#34;
+			height=&#34;583&#34;
+			srcset=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/tmp1_hu76554297eb88dccad0b7279a272d2e78_928402_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/tmp1_hu76554297eb88dccad0b7279a272d2e78_928402_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;대처-방법&#34;&gt;대처 방법&lt;/h4&gt;
+&lt;p&gt;→ tool의 smali version update&lt;br&gt;
+→ truncated method를 무시하도록 nop 코드로 치환&lt;/p&gt;
+&lt;h3 id=&#34;2-repackaging-방해&#34;&gt;2. Repackaging 방해&lt;/h3&gt;
+&lt;p&gt;→ Repackaging을 방해하여 App을 쉽게 변조하지 못하도록 함&lt;br&gt;
+ex) AndroidManifest.xml 변조, Bad Resouce&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 762; 
+			flex-basis: 1830px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/tmp2.png&#34; data-size=&#34;1983x260&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/tmp2.png&#34;
+			width=&#34;1983&#34;
+			height=&#34;260&#34;
+			srcset=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/tmp2_hu7771caa235bea8d61d0b8f0fd0589e1a_436233_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/tmp2_hu7771caa235bea8d61d0b8f0fd0589e1a_436233_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;대처-방법-1&#34;&gt;대처 방법&lt;/h4&gt;
+&lt;p&gt;→ AndroidManifest.xml 의 난돋화된 이름 속성값을 바이너리로 변환&lt;br&gt;
+→ Bad Resouce를 정상 Resource로 교체&lt;/p&gt;
+&lt;h3 id=&#34;3-dex-암호화-및-동적-로딩&#34;&gt;3. Dex 암호화 및 동적 로딩&lt;/h3&gt;
+&lt;p&gt;→ 고객의 코드를 보호하기 위해 DEX 또는 .so 파일을 암호화하여 저장한 뒤, 앱이 실행될 때 다음 API들을 이용하여 동적으로 로드함&lt;/p&gt;
+&lt;p&gt;DexClassLoader(Dalvik), BaseDexClassLoader&lt;br&gt;
+PatchClassLoader(ART)&lt;br&gt;
+dlopen(Native shared object)&lt;/p&gt;
+&lt;h4 id=&#34;대처-방법-2&#34;&gt;대처 방법&lt;/h4&gt;
+&lt;dl&gt;
+&lt;dt&gt;→ Low Level API 함수를 후킹하여 DEX / .so 파일 가로채기&lt;/dt&gt;
+&lt;dd&gt;DexFileLoader, OpenCommon, OpenAndReadMagic, dlopen
+→ File Deletion 함수 후킹하여 삭제 막기&lt;/dd&gt;
+&lt;dd&gt;unlink call을 후킹하여 파일 삭제를 막을 수 있음&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h3 id=&#34;4-frida-remote-debugging-탐지-socket-check&#34;&gt;4. Frida, remote debugging 탐지 (socket check)&lt;/h3&gt;
+&lt;p&gt;→ Frida를 탐지하기 위해 Frdia-server가 열어놓은 포트를 확인
+→ 직접 해당포트에 연결해보는 방법으로 확인&lt;/p&gt;
+&lt;h4 id=&#34;대처-방법-3&#34;&gt;대처 방법&lt;/h4&gt;
+&lt;dl&gt;
+&lt;dt&gt;→ 소켓 연결 함수 후킹&lt;/dt&gt;
+&lt;dd&gt;소켓 연결하는 함수를 후킹하여 연결에 실패하도록 변조&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h3 id=&#34;5-코드-흐름-난독화&#34;&gt;5. 코드 흐름 난독화&lt;/h3&gt;
+&lt;p&gt;→ 실행되는 코드의 흐름을 난독화하여 분석을 방해함
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 214; 
+			flex-basis: 515px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/tmp3.png&#34; data-size=&#34;1305x608&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/tmp3.png&#34;
+			width=&#34;1305&#34;
+			height=&#34;608&#34;
+			srcset=&#34;https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/tmp3_hu88e207705492305edfcf7caa139ec3d0_381723_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android-%EB%B3%B4%EC%95%88-%EC%86%94%EB%A3%A8%EC%85%98/tmp3_hu88e207705492305edfcf7caa139ec3d0_381723_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;대처-방법-4&#34;&gt;대처 방법&lt;/h4&gt;
+&lt;p&gt;→ 불필요한 쓰레기 더미 코드들을 제거하며 분석&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Android 구조와 동작원리</title>
+        <link>https://kazal92.github.io/android/</link>
+        <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://kazal92.github.io/android/</guid>
+        <description>&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 123; 
+			flex-basis: 295px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/android_gramework.png&#34; data-size=&#34;1024x831&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/android_gramework.png&#34;
+			width=&#34;1024&#34;
+			height=&#34;831&#34;
+			srcset=&#34;https://kazal92.github.io/android/android_gramework_huda73576a006cb2837d069a36a8d109c7_583245_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/android_gramework_huda73576a006cb2837d069a36a8d109c7_583245_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h1 id=&#34;architecture&#34;&gt;Architecture&lt;/h1&gt;
+&lt;h2 id=&#34;linux-kernel&#34;&gt;Linux Kernel&lt;/h2&gt;
+&lt;p&gt;내용 추가~!!&lt;/p&gt;
+&lt;h2 id=&#34;android-runtime&#34;&gt;Android Runtime&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AOT(Ahead Of Time), JIT(Just In Time) 컴파일&lt;/li&gt;
+&lt;li&gt;최적화된 GC(Garbage Collector : 메모리 관리)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;달빅 VM(Dalvick Virtual Machine)과 ART(Ahead Of Time)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Andorid는 기본 언어를 JAVA를 사용하기 때문에 JVM 역할을 할 수 있는 VM 필요&lt;/li&gt;
+&lt;li&gt;안드로이드 구조에 최적화 시켜 만든 달빅 VM과 ART&lt;/li&gt;
+&lt;li&gt;가상머신이 dex 포맷의 바이트코드를 해석하여 안드로이드 어플리케이션을 실행하게 된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;JIT(Just In Time)&lt;/strong&gt;&lt;br&gt;
+어플리케이션 구동 시 실시간으로 자바코드로 변환하며, 자바코드 일정부분 RAM 상에 상주&lt;/p&gt;
+&lt;p&gt;장점 : 성능적으로 크게 향상됨&lt;br&gt;
+단점 : JIT 컴파일러 구동 시 하드웨어에 부하가 크게 발생하며, 다른 방식에 비해 RAM 사용량 증가&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;ART(Ahead Of Time)&lt;/strong&gt;&lt;br&gt;
+어플리케이션 설치 시 한 번에 컴파일하여 바이트 코드로 변환하여, 실행 시 변환된 코드를 사용  sdfii&lt;/p&gt;
+&lt;p&gt;장점 : 성능적으로 크게 향상됨&lt;br&gt;
+단점 : 설치 공간이 달빅VM에 비해 약 1.5~2배 가량 더 필요하며, 설치 시간이 오래걸림&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;native-libraries&#34;&gt;Native Libraries&lt;/h2&gt;
+&lt;p&gt;ART 및 HAL등의 많은 핵심 Android 시스템 구성 요소와 서비스는 C 및 C++로 작성된 네이티브 라이브러리를 필요로 하는 네이티브 코드 기반으로 빌드 되어 있음&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NDK(Native Development Kit)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;C/C++(Native Code) 등의 언어로 앱 일부를 구현할 수 있는 도구&lt;/li&gt;
+&lt;li&gt;C/C++로 구현된 코드를 Android에서 사용될 수 있는 Library나 Binary로 만들어 주는 도구&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;JNI(Java Native Interface)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Java 코드에서 C/C++로 만들어진 Library를 가능하게 해주는 인터페이스 제공&lt;/li&gt;
+&lt;li&gt;Java 코드에 Native 함수를 선언하면, Java Library 파일(.so)에서 매핑 되는 함수를 찾음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NDK &amp;amp; JNI 연동&lt;/strong&gt;&lt;br&gt;
+JNI 정보를 담고 있는 JNI_OnLoad() 함수가 로드하려는 labrary 파일 안에 구현되어 있을경우 수동매핑, 구현되어 있지 않은 경우 자동 매핑이 이루어짐&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;자동매핑&lt;/strong&gt; : JNI_Onload() 함수가 없으면 DVM은 자동으로 라이브러리 내에 JNI Native 함수들을 비교해 매핑 작업을 수행 후 매핑된 함수 호출, 매핑 작업으로 인해 성능 저하의 원인이 됨&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;수동매핑&lt;/strong&gt; : JNI_Onlod() 함수가 구현되어 있어 구현된 정보에 맞는 함수 호출, 개발자가 직접 연결해주는 작업이 필요하며 로딩 속도를 향상 시킬 수 있음&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 505; 
+			flex-basis: 1214px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/img_1.png&#34; data-size=&#34;1720x340&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/img_1.png&#34;
+			width=&#34;1720&#34;
+			height=&#34;340&#34;
+			srcset=&#34;https://kazal92.github.io/android/img_1_hu4f02417c497128f56ba8b664b92fc632_95295_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/img_1_hu4f02417c497128f56ba8b664b92fc632_95295_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;android-framework&#34;&gt;Android Framework&lt;/h2&gt;
+&lt;h2 id=&#34;build&#34;&gt;Build&lt;/h2&gt;
+&lt;p&gt;윈도우 실행파일이 PE파일인 것처럼, 안드로이드의 실행파일은 dex이다.&lt;br&gt;
+안드로이드는 dex파일을 달빅이라는 가상머신에서 구동 시킨다.&lt;br&gt;
+달빅 가상머신은 모바일 기기에서 메모리를 적게 사용하면서 실행파일이 구동되도록 모바일에 최적화된 가상머신이다.&lt;br&gt;
+OS에 하나가 있는 것이 아니라 어플리케이션마다 달빅가상머신이 생성되는 형태이다.(샌드박스 형식) .
+apk 개발을 위해 작성한 java코드를 컴파일한 클래스 파일(자바바이트 코드)을 dx 툴로 변환하면 dex(달빅바이트코드) 파일이 생성된다.&lt;br&gt;
+java code → java bytecode → dex bytecode&lt;br&gt;
+그리고 dx툴로 변환하는 과정에서 java의 바이트 코드(.class)가 달빅바이트코드(.dex)로 변환된다&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;DEX (Dalvik Excutable)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Android 어플리케이션은 Dalvik VM에서 더 효과적으로 실행되기 위해 개발자가 JDK로 코드를 컴파일 하여 만든 바이트 코드는 Dalvik VM에서 DEX파일로 변환되어 실행됨&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/android/smali_code/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;Smali Code&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;달빅 바이트 코드를 위한 어셈블리 언어, DEX 바이너리를 사람이 읽기 편하게 표현한 언어&lt;/li&gt;
+&lt;li&gt;재컴파일이 가능하므로 원하는 부분을 수정하여 코드 패칭이 가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 156; 
+			flex-basis: 376px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/build.png&#34; data-size=&#34;794x506&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/build.png&#34;
+			width=&#34;794&#34;
+			height=&#34;506&#34;
+			srcset=&#34;https://kazal92.github.io/android/build_hu88bbbe180d99a6a0650a0ce00c4c8751_204062_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/build_hu88bbbe180d99a6a0650a0ce00c4c8751_204062_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;https://sudeky.tistory.com/30&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;&lt;a class=&#34;link&#34; href=&#34;https://sudeky.tistory.com/30&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://sudeky.tistory.com/30&lt;/a&gt;&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;코드-서명&#34;&gt;코드 서명&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;앱 개발자가 누구인지 나타내기 위해 개발자가 자신의 코드서명인증서로 서명을 하는 것&lt;/li&gt;
+&lt;li&gt;악의적인 사용자가 패치한 앱의 배포를 막기 위해&lt;/li&gt;
+&lt;li&gt;private key가 탈취 당했을경우 앱스토어에 App의 업그레이드 버전으로 배포가 가능해서 키관리 주의&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 298; 
+			flex-basis: 715px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/signing.png&#34; data-size=&#34;975x327&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/signing.png&#34;
+			width=&#34;975&#34;
+			height=&#34;327&#34;
+			srcset=&#34;https://kazal92.github.io/android/signing_hu037c4ffd5d3dbc0f02ff143a6193fd76_150484_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/signing_hu037c4ffd5d3dbc0f02ff143a6193fd76_150484_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;apk-구조&#34;&gt;APK 구조&lt;/h2&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 184; 
+			flex-basis: 443px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/apk.png&#34; data-size=&#34;1988x1076&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/apk.png&#34;
+			width=&#34;1988&#34;
+			height=&#34;1076&#34;
+			srcset=&#34;https://kazal92.github.io/android/apk_hu998d13c24936993fe73d2209e60ce714_668038_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/apk_hu998d13c24936993fe73d2209e60ce714_668038_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;andoridmanifestxml&#34;&gt;AndoridManifest.xml&lt;/h3&gt;
+&lt;p&gt;아래와 같은 App에 대한 정보가 명시되어 있음&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;고유한 패키지 이름&lt;/li&gt;
+&lt;li&gt;Activity, Service, Broadcast Receiver, Instrumentation Definiton&lt;/li&gt;
+&lt;li&gt;권한 정의 (응용 프로그램이 요청한 권한 및 사용자 정의 모두)&lt;/li&gt;
+&lt;li&gt;응용 프로그램과 함께 패키지 되어 사용되는 외부 라이브러리에 대한 정보&lt;/li&gt;
+&lt;li&gt;공유 UID 정보, 기본 설치 위치 및 UI 정보&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;공유 UID&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;두 개 이상의 어플리케이션에서 동일한 사용자 식별자 지정이 가능함&lt;/li&gt;
+&lt;li&gt;이 경우 앱들은 동일한 UID에서 실행되는데, 이를 통해 동일 UID를 가진 앱은 잠재적으로 서로 리소스에 접근 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;activity&#34;&gt;Activity&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;사용자와 상호작용하기 위한 진입점으로 UI를 포함한 화면 하나를 나타냄&lt;/li&gt;
+&lt;li&gt;사용자가 현재 관심을 가지고 있는 화면을 추적하여 계속 실행하게 함&lt;/li&gt;
+&lt;li&gt;Activity Manager에서 위와 같은 일들을 처리함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 227; 
+			flex-basis: 546px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/img1.png&#34; data-size=&#34;1206x530&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/img1.png&#34;
+			width=&#34;1206&#34;
+			height=&#34;530&#34;
+			srcset=&#34;https://kazal92.github.io/android/img1_hu13a030fbcce3252c0f2a65cb62beb232_226938_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/img1_hu13a030fbcce3252c0f2a65cb62beb232_226938_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 187; 
+			flex-basis: 449px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/img2.png&#34; data-size=&#34;2013x1074&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/img2.png&#34;
+			width=&#34;2013&#34;
+			height=&#34;1074&#34;
+			srcset=&#34;https://kazal92.github.io/android/img2_huf33d3f8ff46ab163c4b7da667f94239a_788256_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/img2_huf33d3f8ff46ab163c4b7da667f94239a_788256_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;Activity 생명주기 (Life Cycle)&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;Activity 생명주기 (Life Cycle)&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;service&#34;&gt;Service&lt;/h4&gt;
+&lt;p&gt;백그라운드에서 앱을 계속 실행하기 위한 다목적 진입점으로 백그라운등서 실행되며 오랫동안 실행되는 작업을 수행하거나 원격 프로세스를 위한 작업을 수행&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 619; 
+			flex-basis: 1487px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/img3.png&#34; data-size=&#34;1605x259&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/img3.png&#34;
+			width=&#34;1605&#34;
+			height=&#34;259&#34;
+			srcset=&#34;https://kazal92.github.io/android/img3_hud370bbdedbd1c426dccf24d9c33306ff_234634_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/img3_hud370bbdedbd1c426dccf24d9c33306ff_234634_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;broadcast-receiver&#34;&gt;Broadcast Receiver&lt;/h4&gt;
+&lt;p&gt;시스템이 정기적인 사용자 플로우 밖에서 이벤트를 앱에 전달하도록 지원하며, 앱이 시스템 전체의 브로드캐스트 알림에 응답할 수 있도록 도와줌&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 642; 
+			flex-basis: 1542px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/img4.png&#34; data-size=&#34;1542x240&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/img4.png&#34;
+			width=&#34;1542&#34;
+			height=&#34;240&#34;
+			srcset=&#34;https://kazal92.github.io/android/img4_hud38b93fdb2aeb8068322f486e2cf56d9_227504_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/img4_hud38b93fdb2aeb8068322f486e2cf56d9_227504_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;content-providers&#34;&gt;Content Providers&lt;/h4&gt;
+&lt;p&gt;파일 시스템, SQLite DB, 웹상이나 앱이 액세스할 수 있는 다른 모든 영구 저장 위치에 저장 가능한 앱 데이터의 공유에 있어 읽기, 쓰기 권한 관리 역할, Content Providers를 구성하여 다른 어플리케이션들과 안전하게 데이터 공유가 가능함
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 2279; 
+			flex-basis: 5470px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/img5.png&#34; data-size=&#34;1208x53&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/img5.png&#34;
+			width=&#34;1208&#34;
+			height=&#34;53&#34;
+			srcset=&#34;https://kazal92.github.io/android/img5_hu1fd215cfe689636df37d3c9f7cfaf31c_29129_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/img5_hu1fd215cfe689636df37d3c9f7cfaf31c_29129_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 133; 
+			flex-basis: 319px&#34;
+	&gt;
+	&lt;a href=&#34;https://kazal92.github.io/android/img6.png&#34; data-size=&#34;566x425&#34;&gt;
+		&lt;img src=&#34;https://kazal92.github.io/android/img6.png&#34;
+			width=&#34;566&#34;
+			height=&#34;425&#34;
+			srcset=&#34;https://kazal92.github.io/android/img6_hu368643c9e9dd41b2a4a76f8f04613f52_90209_480x0_resize_box_3.png 480w, https://kazal92.github.io/android/img6_hu368643c9e9dd41b2a4a76f8f04613f52_90209_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;andoridmanifestxml-간단한-분석&#34;&gt;AndoridManifest.xml 간단한 분석&lt;/h2&gt;
+&lt;p&gt;앱 진단 전에 확인하여 앱이 어떤 동작을 하는지 유추 해볼 수 있다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#776e71&#34;&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34; standalone=&amp;#34;no&amp;#34;?&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;manifest&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;xmlns:android=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;http://schemas.android.com/apk/res/android&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;package=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;platformBuildVersionCode=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;23&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;platformBuildVersionName=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;6.0-2166767&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;uses-permission&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;android.permission.WRITE_EXTERNAL_STORAGE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt; //외부 저장소(sd카드) 쓰기 권한                  // 안드로이드 패키지 이름
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;uses-permission&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;android.permission.READ_EXTERNAL_STORAGE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt; // 외부 저장소(sd카드) 읽기 권한
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;uses-permission&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;android.permission.INTERNET&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt; // 외부와 통신 하는 권한
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;application&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:allowBackup=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:debuggable=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:icon=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@mipmap/ic_launcher&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/app_name&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:supportsRtl=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:theme=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@style/AppTheme&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                    ㄴ백업허용		              ㄴdebugable=&amp;#34;true&amp;#34; 디버깅이 가능함 취약한 설정, 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/app_name&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.MainActivity&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:theme=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@style/AppTheme.NoActionBar&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;intent-filter&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;action&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;android.intent.action.MAIN&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;. // 이 속성이 들어가있는 액티비티는 앱에서 가장 먼저 실행되는 액티비티이다. -&amp;gt; jakhar.aseem.diva.MainActivity
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;category&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;android.intent.category.LAUNCHER&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;/intent-filter&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;/activity&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/d1&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.LogActivity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/d2&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.HardcodeActivity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/d3&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.InsecureDataStorage1Activity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/d4&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.InsecureDataStorage2Activity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/d5&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.InsecureDataStorage3Activity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/d6&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.InsecureDataStorage4Activity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/d7&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.SQLInjectionActivity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/d8&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.InputValidation2URISchemeActivity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/d9&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.AccessControl1Activity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/apic_label&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.APICredsActivity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;intent-filter&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;action&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.action.VIEW_CREDS&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;category&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;android.intent.category.DEFAULT&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;/intent-filter&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;/activity&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/d10&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.AccessControl2Activity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/apic2_label&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.APICreds2Activity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;intent-filter&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;action&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.action.VIEW_CREDS2&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;category&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;android.intent.category.DEFAULT&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;/intent-filter&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;/activity&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;provider&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:authorities=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.provider.notesprovider&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:enabled=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:exported=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.NotesProvider&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    // provider 에 exported=&amp;#34;true&amp;#34; 이면 외부 앱에서 이 프로바이더를 사용할 수 있음, 프로바이더의 적절한 권한 설정되어 있는지 확인해야한다.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/d11&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.AccessControl3Activity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/d12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.Hardcode2Activity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/pnotes&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.AccessControl3NotesActivity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:label=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;@string/d13&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#06b6ef&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#48b685&#34;&gt;&amp;#34;jakhar.aseem.diva.InputValidation3Activity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;/application&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5bc4bf&#34;&gt;&amp;lt;/manifest&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

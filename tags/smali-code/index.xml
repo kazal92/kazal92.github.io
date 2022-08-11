@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>smali code on Jun_IT</title>
+    <link>https://kazal92.github.io/tags/smali-code/</link>
+    <description>Recent content in smali code on Jun_IT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Fri, 01 Apr 2022 03:06:10 +0900</lastBuildDate><atom:link href="https://kazal92.github.io/tags/smali-code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>smali code</title>
+      <link>https://kazal92.github.io/android/smali_code/</link>
+      <pubDate>Fri, 01 Apr 2022 03:06:10 +0900</pubDate>
+      
+      <guid>https://kazal92.github.io/android/smali_code/</guid>
+      <description>타입 I – int J – long Z – Boolean D – double F – float S – short C – char V - void 메소드 종류 Static : this 인수가 암묵적으로 첫번째 인수로 전달되지 않으면, Static 메소드
+Direct : vtable 개입 없이 직접 invoke 함 (ex. private method, constructor)
+Virtual : 자식 클래스에서 override 될 수 있는 Virtual 메소드. 클래스 관련됨 vtable을 사용해 invoke 함
+Register 간 데이터 이동 move move/from16 move-wide move-wide/from16 move-object move-object/from16 리턴 세팅 및 처리 move-result move-result-wide move-result-object return-void return return-wide return-object 예외 처리 throw move-exception 레지스터에 상수 대입 const/4 const 인스트럭션 패밀리</description>
+    </item>
+    
+  </channel>
+</rss>

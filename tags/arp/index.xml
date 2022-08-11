@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ARP on Jun_IT</title>
+    <link>https://kazal92.github.io/tags/arp/</link>
+    <description>Recent content in ARP on Jun_IT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Mon, 04 Apr 2022 07:59:37 +0900</lastBuildDate><atom:link href="https://kazal92.github.io/tags/arp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ARP</title>
+      <link>https://kazal92.github.io/arp/</link>
+      <pubDate>Mon, 04 Apr 2022 07:59:37 +0900</pubDate>
+      
+      <guid>https://kazal92.github.io/arp/</guid>
+      <description>누구냐고 물을 IP를 요청하는 브로드캐스트 MAC에 대한 ARP 요청 생성   ARP를 사용하여 누가 대상 IP를 가지고 있는지 확인 목적지 MAC을 브로드캐스트 MAC으로 설정  ㄱㅋ  broadcast = scapy.Ether(dst=&amp;ldquo;ff:ff:ff:ff:ff:ff&amp;rdquo;) broadcast.show() # 확인</description>
+    </item>
+    
+  </channel>
+</rss>
