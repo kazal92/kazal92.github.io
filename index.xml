@@ -20,27 +20,7 @@
 &lt;li&gt;목적지 MAC을 브로드캐스트 MAC으로 설정&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;ㄱㅋ&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;broadcast = scapy.Ether(dst=&amp;ldquo;ff:ff:ff:ff:ff:ff&amp;rdquo;)
-broadcast.show()  # 확인&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>ARP</title>
-        <link>https://kazal92.github.io/arp/</link>
-        <pubDate>Mon, 04 Apr 2022 07:59:37 +0900</pubDate>
-        
-        <guid>https://kazal92.github.io/arp/</guid>
-        <description>&lt;ol&gt;
-&lt;li&gt;누구냐고 물을 IP를 요청하는 브로드캐스트 MAC에 대한 ARP 요청 생성&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;ARP를 사용하여 누가 대상 IP를 가지고 있는지 확인&lt;/li&gt;
-&lt;li&gt;목적지 MAC을 브로드캐스트 MAC으로 설정&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;ㄱㅋ&lt;/li&gt;
+&lt;li&gt;testetestestsettet haha&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;broadcast = scapy.Ether(dst=&amp;ldquo;ff:ff:ff:ff:ff:ff&amp;rdquo;)
 broadcast.show()  # 확인&lt;/p&gt;
