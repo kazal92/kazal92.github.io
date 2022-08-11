@@ -13,7 +13,9 @@
       <pubDate>Mon, 04 Apr 2022 07:59:37 +0900</pubDate>
       
       <guid>https://kazal92.github.io/arp/</guid>
-      <description>누구냐고 물을 IP를 요청하는 브로드캐스트 MAC에 대한 ARP 요청 생성   ARP를 사용하여 누가 대상 IP를 가지고 있는지 확인 목적지 MAC을 브로드캐스트 MAC으로 설정  testetestestsettet haha  broadcast = scapy.Ether(dst=&amp;ldquo;ff:ff:ff:ff:ff:ff&amp;rdquo;) broadcast.show() # 확인</description>
+      <description>누구냐고 물을 IP를 요청하는 브로드캐스트 MAC에 대한 ARP 요청 생성   ARP를 사용하여 누가 대상 IP를 가지고 있는지 확인 목적지 MAC을 브로드캐스트 MAC으로 설정  testetestestsettet haha  broadcast = scapy.Ether(dst=&amp;ldquo;ff:ff:ff:ff:ff:ff&amp;rdquo;) broadcast.show() # 확인
+[https://www.guru99.com/linux-commands-cheat-sheet.html#2](https://www.guru99.com/linux-commands-cheat-sheet.html#2)   [Linux Command Cheat Sheet
+In this Linux/Unix command line cheat sheet, you will learn: Basic Linux commands File Permission commands Environment Variables command User management commands of linux Networking command Process co</description>
     </item>
     
   </channel>
